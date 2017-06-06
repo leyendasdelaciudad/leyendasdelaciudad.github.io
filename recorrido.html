@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorrido Virtual</title>
+    <link rel="stylesheet" href="https://cdn.pannellum.org/2.2/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.pannellum.org/2.2/pannellum.js"></script>
+    <style>
+        h1{text-align: center;font-family: sans-serif;}
+        #panorama {
+        width: 900px;
+        height: 400px;
+        margin: auto; }
+        
+        body {background-image: url(recorrido/negro.png);
+        color:firebrick;
+        font-family: sans-serif;}
+        
+    </style>
+</head>
+<body>
+
+    <h1>Recorrido por el Centro de la CDMX</h1>
+<div id="panorama"></div>
+<script>
+pannellum.viewer('panorama', {   
+    "default": {
+        "firstScene": "Inicio",
+        "author": "Producción Audiovisual",
+        "sceneFadeDuration": 1000,
+        "autoLoad": true,
+        "autoRotate": -1,
+        "hotSpotDebug": true,
+    },
+
+    "scenes": {
+        "Inicio": {
+            "title": "Plaza de Santo Domingo",
+            "hfov": 110,
+            "pitch": -3,
+            "yaw": 117,
+            "type": "equirectangular",
+             "vaov": 95,
+              "haov":360,
+            "panorama": "recorrido/2.vr.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0.5,
+                    "yaw": 130,
+                    "type": "scene",
+                    "text": "Siguiente",
+                    "sceneId": "puente"
+                },
+                     
+            ]
+        },
+
+        "puente": {
+            "title": "Antiguo Colegio de Medicina",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+              "vaov": 95,
+              "haov":360,
+            "panorama": "recorrido/3.vr.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 100,
+                    "type": "scene",
+                    "text": "Siguiente",
+                    "sceneId": "comercio",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                    
+                    
+                                  },
+                {
+                    "pitch": -0.6,
+                    "yaw": -80,
+                    "type": "scene",
+                    "text": "Plaza de Santo Domingo",
+                    "sceneId": "Entrada",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                    
+                    
+                                  },
+                
+            ]
+        },
+
+        "comercio": {
+            "title": "Museo de la Medicina",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+              "vaov": 95,
+              "haov":360,
+            "panorama": "recorrido/4.vr.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": -47,
+                    "type": "scene",
+                    "text": "Siguiente",
+                    "sceneId": "comercio2",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                     },
+                   {
+                    "pitch": -0.6,
+                    "yaw": 203,
+                    "type": "scene",
+                    "text": "Colegio de Medicina",
+                    "sceneId": "puente",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                     },
+                
+            ]
+        },
+
+        "comercio2": {
+            "title": "Panteón de la Catedral",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+              "vaov": 95,
+              "haov":360,
+            "panorama": "recorrido/5.vr.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 170,
+                    "type": "scene",
+                    "text": "Museo de la Medicina",
+                    "sceneId": "comercio",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                     },
+                 {
+                    "pitch": -0.6,
+                    "yaw": 2,
+                    "type": "scene",
+                    "text": "Siguiente",
+                    "sceneId": "molino",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                     },
+                
+                
+            ]
+        },
+
+        "molino": {
+            "title": "Callejón del Suspiro",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+              "vaov": 90,
+              "haov":360,
+            "panorama": "recorrido/7.vr.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 155,
+                    "type": "scene",
+                    "text": "Siguiente",
+                    "sceneId": "iglesia",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                },
+                ]
+        },
+                    "iglesia": {
+            "title": "CDMX",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+              "vaov": 97,
+              "haov":360,
+            "panorama": "recorrido/8.vr.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 205,
+                    "type": "scene",
+                    "text": "Siguiente",
+                    "sceneId": "ruinas",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+
+               },
+                
+                
+            ]
+        },
+
+        "ruinas": {
+            "title": "Final",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+              "vaov": 93,
+              "haov":360,
+            "panorama": "recorrido/9.vr.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.4,
+                    "yaw": -160,
+                    "type": "scene",
+                    "text": "Inicio",
+                    "sceneId": "Inicio",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                     },
+                
+                
+            ]
+        },
+
+
+    }
+});
+</script>
+
+</body>
+</html>
